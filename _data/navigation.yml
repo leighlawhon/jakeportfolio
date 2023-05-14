@@ -1,0 +1,8 @@
+# main links
+main:
+  - title: "My work"
+    url: "/archive"
+  - title: "My Writing"
+    url: "/articles"
+  - title: "About Me"
+    url: "/about"
