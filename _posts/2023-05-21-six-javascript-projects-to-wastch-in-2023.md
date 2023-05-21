@@ -14,14 +14,14 @@ header:
 As 2022 ends, we will start looking forward to 2023. The JavaScript world is evolving quickly, and there are lots of growing projects, some of which deserve your attention, and some that do not. In this article, we will look at six JavaScript projects to watch in 2023.
 
 ## 6. [Turborepo](https://turbo.build/repo)
-![turborepo](/assets/images/turborepo_cache_hit_dvtROQRRv.webp)
+![turborepo]({{ site.baseurl }}/assets/images/turborepo_cache_hit_dvtROQRRv.webp)
 
 Turborepo is a build system by Vercel. It uses caching, which simplifies building by only having to build what changes.
 
 Turborepo’s caching system is very interesting. Whenever you run a command, it utilizes a hashing algorithm that takes in the input command, environment variables, and more and outputs a hash. Then, Turborepo saves the hash and the output of the command run. The next time you run it, it will check whether the hashed value of the input matches the hash in the cache. If so, it will avoid rerunning the command and just return the output of the cached command, saving you time and power.
 
 ## 5. [Tauri](https://tauri.app/) 
-![Tauri](/{{ site.baseurl }}/assets/images/tauri.png)
+![Tauri]({{ site.baseurl }}/assets/images/tauri.png)
 
 If you work on creating desktop apps with web technologies, you must have certainly heard about Electron’s massive memory usage. If you haven’t, here is a quick explanation. Electron is one of the most popular frameworks for building desktop apps using JavaScript. However, it is somewhat bloated due to the fact that it embeds Chromium and Node.js into every app. This basically means that every app has its own version of a browser and server runtime built in, increasing the size of the app and decreasing performance. Luckily, Tauri is here to fix that.
 
@@ -32,7 +32,7 @@ Tauri can also be much easier to use. With Electron, if you want to interface wi
 If you are interested in building desktop apps with JavaScript and are sick of Electron, Tauri is definitely something you should take a look at. Another thing to check out would be PWAs, which can be great for simpler desktop apps.
 
 ## 4. [Bun](https://bun.sh/) 
-![Bun](/assets/images/bun_performance_Tj8YtiHTN.webp)
+![Bun]({{ site.baseurl }}/assets/images/bun_performance_Tj8YtiHTN.webp)
 
 [Bun](https://byteofdev.com/posts/what-is-bun/) is a new JavaScript runtime offering various built-in tools, better web support, and great performance. It aims to replace Node.js and Deno, although it is currently in a very early stage and is missing a lot of features.
 
@@ -52,7 +52,7 @@ Finally, Bun’s bundler helps provide an easy solution for bundling on the web 
 Bun still has a long way to go, but it is quickly making progress, fixing bugs, adding support for new APIs, and adding features. Bun’s creators are trying to create a version of Bun that utilizes Bun’s short startup time and prebundling options to create a highly optimized version designed for edge serverless functions, which would be great given most [edge serverless functions](https://byteofdev.com/posts/serverless) are rather limited currently (although Deno Deploy is trying to solve this too). All of this is to say that Bun is quite interesting and will likely grow a lot over 2023.
 
 ## 3. [Remix](https://remix.run/) 
-![Remix](/assets/images/remix.png)
+![Remix]({{ site.baseurl }}/assets/images/remix.png)
 
 Remix is a React framework that is trying to change the status quo for frameworks. Built by the creators of React Router, Remix promises to bring better performance, modern web standards, and better routing/loading strategies to web development.
 
@@ -63,7 +63,7 @@ Additionally, the reliance on server side rendering combined with Remix forcing 
 Finally, Remix provides great support deployment to modern [serverless providers](https://byteofdev.com/posts/serverless/), even the ones that don’t support Node.js fully, which is an important feature for many greenfield applications.
 
 ## 2. [Turbopack](https://turbo.build/) 
-![Turbopack](/assets/images/Turbo.png)
+![Turbopack]({{ site.baseurl }}/assets/images/Turbo.png)
 
 Turbopack is a [bundler](https://byteofdev.com/posts/bundlers/) created by Vercel in 2022 to try to replace Webpack (yes, it is related to Turborepo). While it is still at a very early stage, the fact that it is supported by Vercel and is already ready to use in Next.js 13 with the `--turbo` flag gives me confidence that it will develop further.
 
@@ -78,7 +78,7 @@ Additionally, Turbopack is designed to allow for only specific parts of your app
 The original creators of Webpack also support Turbopack, which lends it more credence. Because of Turbopack’s unique approach to bundling and its support, I think it will be very interesting to watch in 2023.
 
 ## 1. [Astro](https://astro.build/) 
-![Astro](/assets/images/astro.png)
+![Astro]({{ site.baseurl }}/assets/images/astro.png)
 
 Astro is a static site generator that focuses on ease of use and performance. It was created to solve the performance problems of frameworks like Next.js by removing unnecessary JavaScript.
 
