@@ -1,7 +1,7 @@
 ---
-layout: post
-title:  "The 6 JavaScript Projects to watch in 2023"
-tagline: "What to watch"
+layout: posts
+title:  "The 6 JavaScript Projects to Watch in 2023"
+tagline: "What to watch in 2023"
 date:   2023-01-01 18:45:59 -0500
 categories: javascript state_of_the_web astro bun
 header:
