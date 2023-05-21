@@ -95,7 +95,7 @@ In addition to partial hydration, Astro offers other unique features like the su
 
 ### Astro Download Trends
 Astro’s downloads on NPM across 2022
-![astro download treads](/assets/images/astro-trends_Kb0WHX93S.webp)
+![astro download treads]({{ site.baseurl }}/assets/images/astro-trends_Kb0WHX93S.webp)
 
 While Astro was created in 2021, it grew massively in 2022, going from around 8,000 stars to 24,000. A variety of companies like Google, Netlify, and The Guardian have used it. For these reasons, I think it will be a very interesting project to watch in 2023.
 
