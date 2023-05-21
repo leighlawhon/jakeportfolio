@@ -21,7 +21,7 @@ Turborepo is a build system by Vercel. It uses caching, which simplifies buildin
 Turborepo’s caching system is very interesting. Whenever you run a command, it utilizes a hashing algorithm that takes in the input command, environment variables, and more and outputs a hash. Then, Turborepo saves the hash and the output of the command run. The next time you run it, it will check whether the hashed value of the input matches the hash in the cache. If so, it will avoid rerunning the command and just return the output of the cached command, saving you time and power.
 
 ## 5. [Tauri](https://tauri.app/) 
-![Tauri]({%site.baseurl + /assets/images/tauri.png%})
+![Tauri]({{ site.baseurl }}/assets/images/tauri.png)
 
 If you work on creating desktop apps with web technologies, you must have certainly heard about Electron’s massive memory usage. If you haven’t, here is a quick explanation. Electron is one of the most popular frameworks for building desktop apps using JavaScript. However, it is somewhat bloated due to the fact that it embeds Chromium and Node.js into every app. This basically means that every app has its own version of a browser and server runtime built in, increasing the size of the app and decreasing performance. Luckily, Tauri is here to fix that.
 
