@@ -1,3 +1,56 @@
-h1 {
-    color: red;
+.archive__item {
+    /* position: relative; */
+    padding: 0.5em;
+    border: thin solid #ccc;
+}
+
+.archive__item-title .permalink {}
+
+h2.archive__item-title.no_toc {
+    margin-top: 1em;
+    min-height: 3.6em;
+    display: inline-block;
+}
+
+@media (min-width: 48em) {
+    .grid__item .archive__item .archive__item-excerpt {
+        font-size: 0.6em;
+    }
+}
+
+.entries-grid {
+    display: inline-block;
+}
+
+.masthead {
+    background-color: #F9D423
+}
+
+#site-nav {
+    background-color: transparent;
+}
+
+#site-nav a,
+#site-nav a:visited {
+    color: black;
+}
+
+.grid__item .archive__item-title {
+    font-size: 0.9em;
+}
+
+a {
+    color: #79B7B4
+}
+
+a:visited {
+    color: #ADD6BC
+}
+
+.sticky {
+    top: 4em;
+}
+
+.masthead.sticky {
+    top: 0;
 }

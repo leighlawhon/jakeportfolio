@@ -3,12 +3,13 @@ layout: posts
 title:  "The 6 JavaScript Projects to Watch in 2023"
 tagline: "What to watch in 2023"
 date:   2023-01-01 18:45:59 -0500
-categories: javascript state_of_the_web astro bun
+tags: [javascript, state_of_the_web, astro, bun]
 header:
   overlay_image: https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2670&q=80
   
   caption: "Photo credit: [**Unsplash**](https://unsplash.com)"
-
+highlight_home: true
+categories: article
 ---
 
 As 2022 ends, we will start looking forward to 2023. The JavaScript world is evolving quickly, and there are lots of growing projects, some of which deserve your attention, and some that do not. In this article, we will look at six JavaScript projects to watch in 2023.

@@ -1,18 +1,22 @@
 ---
-layout: page
+layout: archive
 title: About
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+Hi! I'm Jacob. I’ve discovered my passion for the world of web development at an early age. 
+I am a self-taught programmer, optimization enthusiast, web developer, writer, student, and banana lover.
+As you will see in this the writing section of this portfolio, I write about web development quite a bit. 
+I’m now looking for a software developer position to finally kick start my career.
+## Skils
+### Technical Skills 
 
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
+| Skill | Level | Number of Articles |
+| ---- | ---   | --- |
+| [JavaScript]({{site.baseurl}}/javascript) | *expert*{:.expert} | 3 |
+| TypeScript | *expert*{:.expert} | 2 |
+| WordPress | *beginner*{:.beginner} | 4 |
 
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
+### Soft Skills
 
 
-[jekyll-organization]: https://github.com/jekyll

@@ -30,6 +30,16 @@ url: "https://leighlawhon.git.io" # the base hostname & protocol for your site, 
 twitter_username: jekyllrb
 github_username:  jekyll
 
+defaults:
+  # _posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      author_profile: true
+      author: Billy Rick
+      show_date: true
+search: true
 # Build settings
 # theme: minima
 remote_theme: "mmistakes/minimal-mistakes@4.24.0"

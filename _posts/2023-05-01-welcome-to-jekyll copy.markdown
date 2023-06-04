@@ -1,8 +1,8 @@
 ---
 layout: posts
-title:  "Welcome to Jekyll! Test7"
+title:  "New article"
 date:   2023-05-01 18:45:59 -0500
-tags: [education]
+tags: [education, finance]
 categories: work
 highlight_home: true
 header:
