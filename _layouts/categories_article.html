@@ -4,20 +4,33 @@ layout: archive
 
 {{ content }}
 
+{% assign sorted_tags = site.tags | sort %}
+{% for tag in sorted_tags %}
+{% assign cat_tags = tag[1] | where: "categories", "article" | sort %}
+{% if cat_tags != empty %}
+
+<ul>
+    <li><a href="#{{ tag[0] | slugify}}">{{ tag[0] }}</a></li>
+</ul>
+
+{% endif %}
+
+{% endfor %}
 
 
 {% assign sorted_tags = site.tags | sort %}
 {% for tag in sorted_tags %}
-{% assign zz = tag[1] | where: "categories", "article" | sort %}
-{% if zz != empty %}
+{% assign cat_tags = tag[1] | where: "categories", "article" | sort %}
+{% if cat_tags != empty %}
+<section id="{{ tag[0] | slugify | downcase }}" class="taxonomy__section">
 
-<li><span class="tag">{{ tag[0] }}</span>
-    <ul>
-        {% for p in zz %}
-        <li><a href="{{site.baseurl}}/{{ p.url }}">{{ p.title }}</a></li>
-        {% endfor %}
+<h3><span class="tag">{{ tag[0] }}</h3>
+<ul>
+    {% for post in cat_tags %}
+    <li><a href="{{site.baseurl}}/{{ post.url }}">{{ post.title }}</a></li>
+    {% endfor %}
     </ul>
-</li>
+</section>
 {% endif %}
 
 {% endfor %}

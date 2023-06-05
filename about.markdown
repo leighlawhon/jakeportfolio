@@ -2,6 +2,8 @@
 layout: archive
 title: About
 permalink: /about/
+author_profile: true
+author: Billy Rick
 ---
 
 Hi! I'm Jacob. I’ve discovered my passion for the world of web development at an early age. 
@@ -11,11 +13,8 @@ I’m now looking for a software developer position to finally kick start my car
 ## Skils
 ### Technical Skills 
 
-| Skill | Level | Number of Articles |
-| ---- | ---   | --- |
-| [JavaScript]({{site.baseurl}}/javascript) | *expert*{:.expert} | 3 |
-| TypeScript | *expert*{:.expert} | 2 |
-| WordPress | *beginner*{:.beginner} | 4 |
+{% include skills.markdown %}
+
 
 ### Soft Skills
 
