@@ -37,7 +37,7 @@ defaults:
       type: posts
     values:
       author_profile: true
-      author: Billy Rick
+      author: Jacob Jackson
       show_date: true
 search: true
 # Build settings

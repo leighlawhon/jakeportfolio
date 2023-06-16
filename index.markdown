@@ -4,7 +4,10 @@
 
 layout: home
 author_profile: true
-author: Billy Rick
+author: Jacob Jackson
 ---
 
-Hi I'm Jake. Check out some of my favorite articles and projects or go to My Work or My writing for a categorized list.
+![jake avatar]({{site.baseurl}}/assets/images/bioshot.png){: .avatar} 
+
+# Hi! I'm Jacob Jackson. 
+I am a self-taught programmer, optimization enthusiast, web developer, writer, student, and banana lover. Check out some of my favorite articles and projects below or go to [**My Work**]({{site.baseurl}}/mywork) or [**My Writing**]({{site.baseurl}}/mywriting) to see a categorized list.

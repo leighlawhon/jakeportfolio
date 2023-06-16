@@ -40,11 +40,11 @@ h2.archive__item-title.no_toc {
 }
 
 a {
-    color: #79B7B4
+    color: #ff5900
 }
 
 a:visited {
-    color: #ADD6BC
+    color: #da6900
 }
 
 .sticky {
@@ -65,5 +65,81 @@ a:visited {
 }
 
 .taxonomy__section h3 {
+    margin-top: 0;
+}
+img.avatar {
+    float: left;
+    width: 30%;
+    margin: 0 1em 2em 0;
+}
+
+
+h3,
+h3.archive__subtitle {
+    clear: both;
+    color: #007194;
+    font-family: "Waiting for the Sunrise";
+    font-size: 1.35em;
+}
+
+h3.author__name {
+
+    color: #3b3d3e
+}
+
+h1,
+h2 {
+    color: #009ece;
+    font-family: "Rubik";
+    font-weight: 700;
+}
+
+p,
+.sidebar p,
+a,
+body {
+    font-family: "Work Sans";
+}
+
+.sidebar .author__name {
+    font-family: "Rubik";
+}
+
+#site-nav a,
+#site-nav a:visited {
+    font-family: "Rubik";
+}
+
+a.site-title {
+    font-size: 1.25em;
+}
+
+.sidebar.sticky {
+    background-color: #e2f8ff;
+    padding: 1em;
+    max-height: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0em;
+    bottom: 0;
+}
+
+.archive__item-teaser {
+    border: thin solid #ccc;
+    height: 95px;
+
+    img {
+        width: 120%;
+        max-width: 120%;
+        height: 120%
+    }
+}
+
+#main {
+    position: relative;
+}
+
+.page__footer {
     margin-top: 0;
 }
