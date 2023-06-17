@@ -108,7 +108,7 @@ In this regard, Microdiff has improved massively since its release. In fact, sin
 In conclusion, Microdiff is the fastest diffing library because of its performance-focused architecture and the focus on 99% of cases, and Microdiff is still able to also use modern features and make it possible to use easily. If you are interested in Microdiff, check out the GitHub repo. I hope you have learned something from this, and thank you for reading.
 
 ## Next Steps
-
+There are some issues on this project on GitHub. People want to use microdiff with JSON Pacth, which is a standard format for tracking devs and patching them. This a potential v2.
 
 [example of microdiff](https://leighlawhon-verbose-broccoli-xrpwj67x5vq3v57q.github.dev/)
 

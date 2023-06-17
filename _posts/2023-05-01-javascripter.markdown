@@ -11,4 +11,20 @@ header:
   
   caption: "Photo credit: [**Unsplash**](https://unsplash.com)"
 ---
-SARN
+# Background
+I was in a few Programer communities on Discord. At the time I was learning JavaScript and wanted a community that was restricted to that topic. I decided to create my own so that people like me could get support for JavaScript specifically.
+
+I am the founder of the community and I manage the other admins for the community
+
+I was building a bot for tasks for Discord
+
+# Approach
+My primary strategy for recruiting new members was to drive traffic to the community using SEO.
+
+we were one of the first communities to switch over to Discord's new channels for communities.
+
+# Results
+Currently, there are more than 10K users in the community.
+
+# Next Steps
+In the future I am going to build a new bot, that uses Discords newer APIs to help make better tasks and events for JavaScripters
