@@ -1,25 +1,24 @@
+body {
+    color: black;
+}
 .archive__item {
     /* position: relative; */
     padding: 0.5em;
     border: thin solid #ccc;
 }
 
-.archive__item-title .permalink {}
+.work .grid__item .archive__item {
+    min-height: 13em;
+}
 
-h2.archive__item-title.no_toc {
-    margin-top: 1em;
-    min-height: 3.6em;
-    display: inline-block;
+.article .grid__item .archive__item {
+    min-height: 15em;
 }
 
 @media (min-width: 48em) {
     .grid__item .archive__item .archive__item-excerpt {
         font-size: 0.6em;
     }
-}
-
-.entries-grid {
-    display: inline-block;
 }
 
 .masthead {
@@ -32,7 +31,7 @@ h2.archive__item-title.no_toc {
 
 #site-nav a,
 #site-nav a:visited {
-    color: black;
+    color: #103966;
 }
 
 .grid__item .archive__item-title {
@@ -40,13 +39,20 @@ h2.archive__item-title.no_toc {
 }
 
 a {
-    color: #ff5900
+    color: #f09f00
 }
 
 a:visited {
     color: #da6900
 }
 
+.author__urls.social-icons a,
+.author__urls.social-icons a:visited,
+.page__footer a,
+.page__footer a:visited {
+    color: #103966;
+    font-weight: 700;
+}
 .sticky {
     top: 4em;
 }
@@ -77,19 +83,19 @@ img.avatar {
 h3,
 h3.archive__subtitle {
     clear: both;
-    color: #007194;
+    color: #103966;
     font-family: "Waiting for the Sunrise";
     font-size: 1.35em;
 }
 
 h3.author__name {
 
-    color: #3b3d3e
+    color: #001933
 }
 
 h1,
 h2 {
-    color: #009ece;
+    color: #00a8db;
     font-family: "Rubik";
     font-weight: 700;
 }
@@ -110,9 +116,9 @@ body {
     font-family: "Rubik";
 }
 
-a.site-title {
-    font-size: 1.25em;
-}
+// a.site-title {
+//     font-size: 1.25em;
+// }
 
 .sidebar.sticky {
     background-color: #e2f8ff;
@@ -142,4 +148,12 @@ a.site-title {
 
 .page__footer {
     margin-top: 0;
+}
+.page__hero--overlay {
+    margin-bottom: 0;
+}
+
+.page__hero--overlay .wrapper {
+    background-color: #0000007a;
+    padding: 1em;
 }

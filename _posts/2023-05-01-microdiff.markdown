@@ -12,7 +12,7 @@ header:
   caption: "Photo credit: [**Unsplash**](https://unsplash.com)"
 ---
 ## Background
-I maintain Microdiff, a performance and size optimized library for deep object diffing. Someone posted in a Microdiff issue that asked me to write a blog post about how I made Microdiff fast.
+I maintain [Microdiff](https://github.com/AsyncBanana/microdiff), a performance and size optimized library for deep object diffing. Someone posted in a [Microdiff issue](https://github.com/AsyncBanana/microdiff/issues/2#issuecomment-962491393) that asked me to write a blog post about how I made Microdiff fast.
 
 >I believe that an explainer (perhaps a blog post?) of the inefficiencies you’ve noticed with other libraries and how you’ve overcome them (including the “edge cases” you’re saying are unsupported) would be very interesting. They’d also help correctly interpret the benchmark results.
 
@@ -68,13 +68,13 @@ The diffing ecosystem was in a bad state. Many libraries had millions of downloa
 ### Deep-Diff 
 Deep-Diff is one of the most popular JavaScript libraries for deep object diffing. It gets between 1 and 2 million downloads each week, and tools with more than 10k GitHub stars use it. However, there are many flaws with it. First, the last commit was in 2019, and it doesn’t follow modern conventions like supporting ESM and offering bundled TypeScript types.
 
-Additionally, there are problems with its size and performance. It has a size of 5.5kb minified and 1.9kb Gzipped. That size is not terrible, except that this is a simple utility and therefore should have an even smaller size. In comparison, Microdiff has a size of 0.9kb minified and 0.5kb Gzipped. Now, for performance, Deep-Diff also does not do that well. It is not made to be small or fast, as it has many different functions, which adds significant overhead. Additionally, it does not do things like grouping type behavior to improve performance. Because of all these things, ==Microdiff can be as much as 400% faster.==
+Additionally, there are problems with its size and performance. It has a size of 5.5kb minified and 1.9kb Gzipped. That size is not terrible, except that this is a simple utility and therefore should have an even smaller size. In comparison, Microdiff has a size of 0.9kb minified and 0.5kb Gzipped. Now, for performance, Deep-Diff also does not do that well. It is not made to be small or fast, as it has many different functions, which adds significant overhead. Additionally, it does not do things like grouping type behavior to improve performance. Because of all these things, **Microdiff can be as much as 400% faster.**
 
 ### Deep-Object-Diff 
-Deep-Object-Diff is another popular diffing library. While it has not been updated since 2018, it has some of the modern features that Deep-Diff was missing, like ESM and built-in TypeScript types. Additionally, it can perform at speeds near Microdiff if you use the basic diffing. However, there are still two problems with it, the size and the information it provides. First, while it is not as big as deep-diff, it is still significant, weighing in at 5.2kb minified and 1kb Gzipped. Second, because of the way the output is designed, it provides few details. Where Microdiff provides the change type, new value, old value, and path, the most detailed diff (`detailedDiff`) of Deep-Object-Diff does not provide the old value. Additionally, if you want near Microdiff speeds, you have to use the primary diff function instead of detailedDiff, making it so you do not know the change type.
+Deep-Object-Diff is another popular diffing library. While it has not been updated since 2018, it has some of the modern features that Deep-Diff was missing, like ESM and built-in TypeScript types. Additionally, it can perform at speeds near Microdiff if you use the basic diffing. However, there are still two problems with it, the size and the information it provides. First, while it is not as big as deep-diff, it is still significant, weighing in at 5.2kb minified and 1kb Gzipped. Second, because of the way the output is designed, it provides few details. Where Microdiff provides the change type, new value, old value, and path, the most detailed diff (`detailedDiff`) of Deep-Object-Diff does not provide the old value. Additionally, if you want near Microdiff speeds, you have to use the primary diff function instead of `detailedDiff`, making it so you do not know the change type.
 
 ### JSDiff 
-While JSDiff supports object diffing, it is primarily designed for diffing text. It is big, at 15.8kb minified and 5.9kb Gzipped, and extremely slow (2100% slower than Microdiff). I will not go in-depth on why it is so slow because it is simply not designed for object diffing.
+While JSDiff supports object diffing, it is primarily designed for diffing text. It is big, at 15.8kb minified and 5.9kb Gzipped, and extremely slow (**2100% slower than Microdiff**). I will not go in-depth on why it is so slow because it is simply not designed for object diffing.
 
 ## The Approach
 ### Performance focused architecture 
@@ -87,7 +87,7 @@ if (value instanceof RegExp && value2 instanceof RegExp) {
 }
 ```
 
-This works, but what if you needed to check new String() objects or new Number() objects too? (new String() and new Number() do not create primitives, so you have to convert them into primitives like with the Dates and RegExs) To fix this without introducing a lot of if thens, Microdiff’s implementation of this is more like this:
+This works, but what if you needed to check `new String()` objects or `new Number()` objects too? (`new String()` and `new Number()` do not create primitives, so you have to convert them into primitives like with the Dates and RegExs) To fix this without introducing a lot of `if then`s, Microdiff’s implementation of this is more like this:
 ```javascript
 const richTypes = { Date: true, RegExp: true, String: true, Number: true };
 if (richTypes[Object.getPrototypeOf(value).constructor.name]) {
@@ -97,15 +97,15 @@ if (richTypes[Object.getPrototypeOf(value).constructor.name]) {
 }
 ```
 
-This code first gets a list of types that cannot be compared directly (richTypes). Then, it checks if the value is one of those types. If it is, then the code checks if the value can be coerced into a number with isNaN. If it can (which is true in the case of dates and new Number()s), it checks the version coerced into a number. If not (which is the case for RegEx and new String()), it coerces the value into a string and compares that version. The actual rich type conversion logic is not that different in Microdiff, although there are a few differences that decrease the size and help the logic fit in with the rest of the code.
+This code first gets a list of types that cannot be compared directly (`richTypes`). Then, it checks if the value is one of those types. If it is, then the code checks if the value can be coerced into a number with `isNaN`. If it can (which is true in the case of dates and `new Number()`s), it checks the version coerced into a number. If not (which is the case for RegEx and `new String()`), it coerces the value into a string and compares that version. The actual rich type conversion logic is not that different in Microdiff, although there are a few differences that decrease the size and help the logic fit in with the rest of the code.
 
 Things like that are part of why Microdiff is fast. However, another reason is that it focuses on only more common cases instead of every possible edge case.
 
-Focusing on 99% of cases instead of fixing all edge cases 
-In this regard, Microdiff has improved massively since its release. In fact, since writing the initial explanation, Microdiff has added support for more rich types and cyclical references. However, there are still cases where Microdiff has less correct behavior, like when comparing objects with prototype properties, because it includes prototype properties. Type combination solves this for the listed types but not for all other types. In testing previously, ways of excluding prototype properties have not been fast. However, I might add a way for you to pass custom inheritance types for string/number coercion, which might help certain things. Nonetheless, currently, this is not possible.
+### Focusing on 99% of cases instead of fixing all edge cases 
+In this regard, Microdiff has improved massively since its release. In fact, since writing the [initial explanation](https://github.com/AsyncBanana/microdiff/issues/2#issuecomment-960291469), Microdiff has added support for more rich types and cyclical references. However, there are still cases where Microdiff has less correct behavior, like when comparing objects with prototype properties, because it includes prototype properties. Type combination solves this for the listed types but not for all other types. In testing previously, ways of excluding prototype properties have not been fast. However, I might add a way for you to pass custom inheritance types for string/number coercion, which might help certain things. Nonetheless, currently, this is not possible.
 
 ## Results 
-In conclusion, Microdiff is the fastest diffing library because of its performance-focused architecture and the focus on 99% of cases, and Microdiff is still able to also use modern features and make it possible to use easily. If you are interested in Microdiff, check out the GitHub repo. I hope you have learned something from this, and thank you for reading.
+In conclusion, Microdiff is the fastest diffing library because of its performance-focused architecture and the focus on 99% of cases, and Microdiff is still able to also use modern features and make it possible to use easily. If you are interested in Microdiff, [check out the GitHub repo](https://github.com/AsyncBanana/microdiff). I hope you have learned something from this, and thank you for reading.
 
 ## Next Steps
 There are some issues on this project on GitHub. People want to use microdiff with JSON Pacth, which is a standard format for tracking devs and patching them. This a potential v2.
