@@ -40,6 +40,9 @@ defaults:
       author: Jacob Jackson
       show_date: true
 search: true
+
+footer_scripts:
+  - /assets/js/animation.js
 # Build settings
 # theme: minima
 remote_theme: "mmistakes/minimal-mistakes@4.24.0"
